@@ -1,0 +1,22 @@
+{
+  "name": "random-katas",
+  "version": "1.0.0",
+  "description": "katas",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AliCW/random-katas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AliCW/random-katas/issues"
+  },
+  "homepage": "https://github.com/AliCW/random-katas#readme",
+  "dependencies": {
+    "jest": "^29.5.0"
+  }
+}
