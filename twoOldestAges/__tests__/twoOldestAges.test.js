@@ -20,3 +20,5 @@ describe('find the two highest ages numbers', () => {
         expect(twoOldestAges(array)).toEqual([age3, age4])
     })
 })
+
+//https://www.codewars.com/kata/511f11d355fe575d2c000001/train/javascript
