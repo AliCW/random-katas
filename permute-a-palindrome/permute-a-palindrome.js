@@ -21,7 +21,6 @@ function permuteAPalindrome(input) {
     } else {
         return true
     }
-
 }
 
 //https://www.codewars.com/kata/58ae6ae22c3aaafc58000079/train/javascript

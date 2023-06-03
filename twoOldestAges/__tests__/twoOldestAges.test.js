@@ -4,7 +4,7 @@ describe('find the two highest ages numbers', () => {
     test('tests the input array has not mutated', () => {
         const array = [1, 2, 3, 4, 5]
         twoOldestAges(array)
-        expect(array).toBe[1, 2, 3, 4, 5];
+        expect(array).toEqual([1, 2, 3, 4, 5]);
     })
     test('returns the two highest ages numbers from an array of set positive numbers', () => {
         const array = [4, 8, 19, 45, 89, 60, 0]
