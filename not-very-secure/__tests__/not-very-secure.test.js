@@ -2,9 +2,9 @@ const { alphanumeric } = require('../not-very-secure');
 
 describe('check if the given string is alphanumeric - upper or lower case latin and/or numbers 0-9', () => {
     test('returns false for an empty string - false test', () => {
-        const string = ""
-        expect(alphanumeric(string)).toBe(false)
-    })
+        const string = "";
+        expect(alphanumeric(string)).toBe(false);
+    });
     test('checks for a string with only alphabet characters - true test', () => {
         const string = 'jimmies';
         expect(alphanumeric(string)).toBe(true);
