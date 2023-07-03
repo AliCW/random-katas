@@ -18,5 +18,11 @@
   "homepage": "https://github.com/AliCW/random-katas#readme",
   "dependencies": {
     "jest": "^29.5.0"
+  },
+  "devDependencies": {
+    "jest-extended": "^4.0.0"
+  },
+  "jest": {
+    "setupFilesAfterEnv": ["jest-extended/all"]
   }
 }
