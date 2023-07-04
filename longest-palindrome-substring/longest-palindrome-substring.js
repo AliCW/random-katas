@@ -20,9 +20,7 @@ const longestPalindromeSubstring = function (s) {
       }
     }
   
-    if (count === s.length) return s;
-
-  if(s.length > 10) {
+  if(s.length > 25) {
       for (let i = 0; i < s.length; i++) {
         for (let j = 0; j < s.length - i; j++) {
             checkPal = stringArr.slice(0, j);
