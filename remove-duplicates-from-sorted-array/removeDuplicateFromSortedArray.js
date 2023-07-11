@@ -1,7 +1,7 @@
 const removeDuplicateFromSortedArray = (nums) => {
     let copy = [... nums];
     let output = [copy[0]];
-    let count = copy.length;
+    const count = copy.length;
     let unique = {
         0: copy[0],
     };
