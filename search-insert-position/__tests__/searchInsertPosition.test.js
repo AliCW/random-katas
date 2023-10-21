@@ -1,6 +1,12 @@
 const { searchInsert } = require('../searchInsertPosition')
 
 describe('Given an array of distinct integers, return the index of the target value or where the target index should be', () => {
+    test('tests the input array is not mutated', () => {
+        const nums = [1,3,5,6];
+        const target = 5;
+        searchInsert(nums, target)
+        expect(nums).toEqual([1,3,5,6]);
+    })
     test('First case - [1,3,5,6], target = 5, output = 2', () => {
         const nums = [1,3,5,6];
         const target = 5;

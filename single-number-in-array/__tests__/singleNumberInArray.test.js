@@ -1,6 +1,11 @@
 const { singleNumber } = require('../singleNumberInArray');
 
 describe('given a non-empty array, return the element appearing once', () => {
+    test('tests the input array is not mutated', () => {
+        const nums = [1, 2, 2];
+        singleNumber(nums)
+        expect(nums).toEqual([1, 2, 2]);
+    })
     test('first test - nums = [1, 2, 2] - return 1', () => {
         const nums = [1, 2, 2];
         expect(singleNumber(nums)).toBe(1);

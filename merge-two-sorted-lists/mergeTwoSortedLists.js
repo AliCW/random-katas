@@ -1,8 +1,5 @@
 const mergeTwoSortedLists = (list1, list2) => {
-    console.log(list1)
-
     let merged = list1.concat(list2);
-
     merged.sort((a, b) => {
         return a - b
     })

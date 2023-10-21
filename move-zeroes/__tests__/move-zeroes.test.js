@@ -5,6 +5,11 @@ describe('Move all zeroes to the end of the array', () => {
        const array = [1, 0, 2, 3, 0, 4, 0, 5] 
        expect(typeof moveZeroes(array)).toBe('object')
     })
+    test('tests the input array is not mutated', () => {
+      const array = [1, 0, 2, 3, 0, 4, 0, 5]
+      moveZeroes(array)
+      expect(array).toEqual([1, 0, 2, 3, 0, 4, 0, 5])
+    })
     test('return zeroes at the end - given array has three zeroes seperated by one digit', () => {
         const array = [1, 0, 2, 3, 0, 4, 0, 5] 
         expect(moveZeroes(array)).toEqual([1, 2, 3, 4, 5, 0, 0, 0])

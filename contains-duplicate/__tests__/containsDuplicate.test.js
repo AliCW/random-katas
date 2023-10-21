@@ -1,6 +1,11 @@
 const { containsDuplicate } = require('../containsDuplicate');
 
 describe('returns false if every element is unique, returns true if a duplicate is found', () => {
+    test('tests the input array is not mutated', () => {
+        const nums = [1, 2, 3, 1]
+        containsDuplicate(nums)
+        expect(nums).toEqual([1, 2, 3, 1])
+    });
     test('first case - nums = [1,2,3,1] - return true', () => {
         const nums = [1, 2, 3, 1];
         expect(containsDuplicate(nums)).toBe(true);

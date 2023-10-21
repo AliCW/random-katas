@@ -1,6 +1,15 @@
 const { mergeTwoSortedLists } = require('../mergeTwoSortedLists');
 
 describe('merge the two lists in to one sorted list', () => {
+    test('tests the input array is not mutated', () => {
+        const array1 = [1,2,4];
+        const array2 = [1,3,4];
+        mergeTwoSortedLists(array1, array2)
+        expect(array1).toEqual([1,2,4]);
+        expect(array2).toEqual([1,3,4]);
+    })
+
+
     test('first case - array1 = [1,2,4], array2 = [1,3,4]', () => {
         const array1 = [1,2,4];
         const array2 = [1,3,4];

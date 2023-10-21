@@ -6,6 +6,13 @@ describe('find if the first array entries are contained in that of the second ar
         array2 = [];
         expect(typeof whichAreIn(array1, array2)).toBe('object')
     })
+    test('tests the input array is not mutated', () => {
+        array1 = ['arp'];
+        array2 = ['carp'];
+        whichAreIn(array1, array2)
+        expect(array1).toEqual(['arp'])
+        expect(array2).toEqual(['carp'])
+    })
     test('given a single entry in array 1, function finds a single element in common with array 2', () => {
         array1 = ['arp'];
         array2 = ['carp'];

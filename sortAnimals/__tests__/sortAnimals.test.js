@@ -7,7 +7,10 @@ describe('Given and array of animals sorted by number of legs, the the name alph
         { name: "Dog", numberOfLegs: 4 },
         { name: "Centipede", numberOfLegs: 100 },];
         sortAnimal(input);
-        expect(input).toEqual(input);
+        expect(input).toEqual([
+            { name: "Snake", numberOfLegs: 0 },
+            { name: "Dog", numberOfLegs: 4 },
+            { name: "Centipede", numberOfLegs: 100 },]);
     });
     test('Given an empty array return and empty array', () => {
         const input = []

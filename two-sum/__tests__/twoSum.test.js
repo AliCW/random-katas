@@ -1,6 +1,12 @@
 const { twoSum } = require('../twoSum')
 
 describe('Given an array of integers, return the indices of the intergers that add up to the second argument', () => {
+    test('tests the input array is not mutated', () => {
+        const nums = [2, 7, 11, 15];
+        const target = 9;
+        twoSum(nums, target)
+        expect(nums).toEqual([2, 7, 11, 15]);
+    })
     test('First example, positive case', () => {
         const nums = [2, 7, 11, 15];
         const target = 9;
