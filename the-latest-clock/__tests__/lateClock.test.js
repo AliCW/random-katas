@@ -50,6 +50,13 @@ describe('Given four digits, return the time latest in the day (24 hour clock (0
         const d = 2;
         expect(lateClock(a, b, c, d)).toBe("21:00");
     });
+    test("Given 1 2 8 9, return '19:28'", () => {
+        const a = 1;
+        const b = 2;
+        const c = 8;
+        const d = 9;
+        expect(lateClock(a, b, c, d)).toBe("19:28");
+    });
 });
 
 //https://www.codewars.com/kata/58925dcb71f43f30cd00005f/train/python

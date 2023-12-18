@@ -1,9 +1,15 @@
 const lateClock = (a, b, c, d) => {
+    let countOverSix = 0;
     let output = "";
     let argArray = [a, b, c, d];
 
+    argArray.forEach((element) => {
+        if(element <= 5) {
+            countOverSix++;
+        }
+    })
     const findFirst = (array) => {
-        if(array.indexOf(2) >= 0 ){
+        if(array.indexOf(2) >= 0  && countOverSix >= 3) {
             output += '2';
             argArray.splice(array.indexOf(2), 1)
         } else 
