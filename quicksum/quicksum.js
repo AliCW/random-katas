@@ -5,6 +5,7 @@ const quicksum = (packet) => {
     if(/[a-z]/.test(packet) === true) return 0;
 
     let output = 0;
+
     const dict = {
         A: 1,
         B: 2,
@@ -44,6 +45,6 @@ const quicksum = (packet) => {
     return output;
 };
 
-module.exports = { quicksum };
+module.exports = { quicksum }
 
 //https://www.codewars.com/kata/569924899aa8541eb200003f/train/javascript
