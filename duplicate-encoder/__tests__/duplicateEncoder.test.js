@@ -3,7 +3,7 @@ const { duplicateEncoder } = require('../duplicateEncoder');
 describe("Encode the given string, if a char appears once, replace with '(', else replace with ')' (ignoring case)", () => {
     test("Given 'din', return '((('", () => {
         const string = "din";
-        expect(typeof duplicateEncoder(string)).toBe('string')
+        expect(typeof duplicateEncoder(string)).toBe('string');
         expect(duplicateEncoder(string)).toBe("(((");
     });
     test("Given 'recede', return '()()()'", () => {
