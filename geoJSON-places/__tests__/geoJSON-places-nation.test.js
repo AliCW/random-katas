@@ -66,4 +66,24 @@ describe("Given a eclipse JSON type & index number, display the nations that wil
         "Russia-Jamalo-Neneckij avtonomnyj okrug",
         "Russia-Krasnojarskij kraj",]);
     });
+    test("Given an 'annular' type and index of 1, return many countries - passing null iso3166 lookup", () => {
+        const JSON = "annular";
+        const index = 0;
+        expect(findNations(JSON, index)).toEqual([
+        "Egypt-Al Buḩayrah",
+        "Egypt-Al Qāhirah",
+        "Egypt-Janūb Sīnā'",
+        "Saudi Arabia-Tabūk",
+        "Saudi Arabia-Al Madīnah al Munawwarah",
+        "Saudi Arabia-Ḩā'il",
+        "Saudi Arabia-Al Qaşīm",
+        "Saudi Arabia-Ar Riyāḑ",
+        "Saudi Arabia-Ash Sharqīyah",
+        "Oman-Z̧ufār",
+        "India-Kerala",
+        "India-Tamil Nadu",
+        "Sri Lanka-Anuradhapura",
+        "Sri Lanka-Tirukŏṇamalai",
+    ]);
+    });
 });
