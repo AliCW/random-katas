@@ -3,8 +3,6 @@ const hybrid = require("./data/all-hybrid-eclipses");
 const annular = require("./data/all-annular-eclipses");
 const { lookUp } = require("geojson-places");
 
-//want a list of countries it passes through 
-
 const findContinents = (JSON, index) => {
 
     const dict = {
