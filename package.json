@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/AliCW/random-katas#readme",
   "dependencies": {
+    "axios": "^1.6.7",
     "country-code-lookup": "^0.1.1",
     "geojson-places": "^1.0.8",
     "iso-3166-2": "^1.0.0",

@@ -6,7 +6,7 @@ const lookup = require("country-code-lookup");
 const iso3166 = require("iso-3166-2");
 
 const findNations = (JSON, index) => {
-  let output = [];
+  let nations = [];
   let countryCodes = [];
   let regionCodes = [];
   let regionInfo = [];
@@ -52,33 +52,26 @@ const findNations = (JSON, index) => {
     });
   }
 
-  output = countryCodes.map((countryCode) => {
+  nations = countryCodes.map((countryCode) => {
     let nationObject = lookup.byIso(countryCode)
     
     return nationObject.country
 });
 
-for(let i = 0; i < output.length; i++) {
+  for(let i = 0; i < nations.length; i++) {
 
-    let regionObject = iso3166.country(output[i]);
+    let regionObject = iso3166.country(nations[i]); //find all regions by country
     
     if(regionObject === null) break;
-
+    else 
     if(regionObject.sub[regionCodes[i]]) {
-        let regionName = regionObject.sub[regionCodes[i]].name;
-        regionInfo.push(regionName);
-    };
+        let regionName = regionObject.sub[regionCodes[i]].name; //cross reference check - region codes to name
+        regionInfo.push(regionObject.name + " - " + regionName);
+    }
 };   
+  
+  return [...new Set(regionInfo)];
 
-    output = output.map((element, jindex) => {
-        if(regionInfo[jindex] === undefined) return;
-        return element + "-" + regionInfo[jindex];
-    });
-
-    output = [...new Set(output)];
-    output = output.filter(item => item !== undefined);
-
-  return output;
 };
 
 module.exports = { findNations };
