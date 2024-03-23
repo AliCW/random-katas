@@ -41,7 +41,7 @@ describe('Given a string of alphanumerical characters seperated by a + - * / - r
         const str = "41t6pa71.085js9u*3zc0kv4r1.l70qb";
         expect(calculateString(str)).toBe("126750942");
     });
-    test('Given "989869.0fc7l/84y3mr2.262a0pi9...", return 117', () => {
+    test('Given "989869.0fc7l/84y3mr2.262a0pi9.", return 117', () => {
         const str = "989869.0fc7l/84y3mr2.262a0pi9.";
         expect(calculateString(str)).toBe("117");
     });

@@ -8,7 +8,6 @@ def validIPv4(str):
         return False
     
     for i in range(len(array)):
-        print(re.search("[!0-9]", array[i]))
         if re.search("[0-9]", array[i]) == None:
             return False
         if bool(re.search("[^0-9]", array[i])) == True:
