@@ -19,4 +19,5 @@ const histogram = (array) => {
 
 module.exports = { histogram };
 
+
 //https://www.codewars.com/kata/57d532d2164a67cded0001c7/train/javascript
