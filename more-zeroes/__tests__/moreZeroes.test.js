@@ -18,9 +18,21 @@ describe(`Create a moreZeros function which will receive a string for input, and
         const string = "abcdeabcde";
         expect(moreZeroes(string)).toEqual(['a', 'b', 'd']);
     });
-    test("Given '£[abcABCabcABC]$', return ['a', 'b', 'c', 'A', 'B', 'C'", () => {
-        const string = "£[abcABCabcABC]$";
-        expect(moreZeroes(string)).toEqual(['a', 'b', 'A', 'B', 'C', '$']);
+    test("Given 'Forgiveness is the fragrance that the violet sheds on the heal that has crushed it', return ['F', ' ', 'h', 'a', 'd']", () => {
+        const string = "Forgiveness is the fragrance that the violet sheds on the heal that has crushed it";
+        expect(moreZeroes(string)).toEqual(["F", " ", "h", "a", "d"]);
+    });
+    test("Given 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_', return ['a', 'b', 'd', 'h', 'p', 'A', 'B', 'C', 'D', 'E', 'F', 'H', 'I', 'J', 'L', 'P', 'Q', 'R', 'T', 'X', '0']", () => {
+        const string = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_";
+        expect(moreZeroes(string)).toEqual(['a', 'b', 'd', 'h', 'p', 'A', 'B', 'C', 'D', 'E', 'F', 'H', 'I', 'J', 'L', 'P', 'Q', 'R', 'T', 'X', '0']);
+    });
+    test("Given 'thequickbrownfoxjumpsoverthelazydog', return ['h', 'b', 'p', 'a', 'd']", () => {
+        const string = "thequickbrownfoxjumpsoverthelazydog";
+        expect(moreZeroes(string)).toEqual(['h', 'b', 'p', 'a', 'd']);
+    });
+    test(`Given "THEQUICKBROWNFOXJUMPSOVERTHELAZYDOG", return ['T', 'H', 'E', 'Q', 'I', 'C', 'B', 'R', 'F', 'X', 'J', 'P', 'L', 'A', 'D']`, () => {
+        const string = "THEQUICKBROWNFOXJUMPSOVERTHELAZYDOG";
+        expect(moreZeroes(string)).toEqual( ['T', 'H', 'E', 'Q', 'I', 'C', 'B', 'R', 'F', 'X', 'J', 'P', 'L', 'A', 'D']);
     });
 });
 

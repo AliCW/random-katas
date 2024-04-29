@@ -1,31 +1,26 @@
 const moreZeroes = (string) => {
 
     const binaries = [];
-    const indices = [];
     string.split('').forEach((letter) => {
         binaries.push(letter.charCodeAt(0).toString(2));
     });
-
-    for(let i = 0; i < binaries.length; i++) {
+    
+    const indices = [];
+    binaries.forEach((element, index) => {
         let zeroes = 0;
-        let ones = 0;
-        binaries[i].split('').forEach((number) => {
-            if(Number(number) === 0) {
-                zeroes++;
-            } else {
-                ones++;
+        for(let i = 0; i < element.length; i++) {
+            if(Number(element[i]) === 0) zeroes++;
+            if(zeroes >= 4) {
+                indices.push(index);
+                break;
             };
-        });
-        if(zeroes > ones) indices.push(i);
-        else indices.push("");
-    };
+        };
+    });
 
     const output = [];
-    const splitString = string.split('');
-
     for(let j = 0; j < string.length; j++) {
-        if(output.includes(splitString[j])) continue;
-        if(indices.includes(j) === true) output.push(splitString[j]);
+        if(output.includes(string.charAt(j))) continue;
+        if(indices.includes(j) === true) output.push(string.charAt(j));
     };
 
     return output;
