@@ -19,10 +19,11 @@ const stonePick = (array) => {
     let output = 0;
     for(let i = 0; i < array.length; i++){
         if(dict["Sticks"] >= 2 && dict["Cobblestone"] >= 3) output++;
-        else { return output };
+        else { break };
         dict["Sticks"] -= 2;
         dict["Cobblestone"] -= 3;
     };
+    return output;
 };
 
 module.exports = { stonePick };
