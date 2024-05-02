@@ -2,9 +2,9 @@ const { stonePick } = require('../stonePickaxes');
 
 describe('Given an array of materials of 1-200 length, return the total number of cobblestone pickaxes that can be created (wood makes 4 sticks)', () => {
     test('Confirm the input array is not mutated', () => {
-        const array = [1, 2, 3, 4, 5];
+        const array = ['Wood', 'Wood', 'Cobblestone', 'Cobblestone'];
         stonePick(array);
-        expect(array).toEqual([1, 2, 3, 4, 5]);
+        expect(array).toEqual(['Wood', 'Wood', 'Cobblestone', 'Cobblestone']);
     });
     test(`Given [], return 0`, () => {
         const array = [];
