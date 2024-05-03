@@ -1,17 +1,14 @@
-const highestRank = (arr) => {
-    let dict = {};
-    let outputSort = [];
+const highestRank = (array) => {
 
-    arr.forEach((element) => {
-        dict[element] = 0;
+    const dict = {}; 
+    array.forEach((element) => {
+        if(dict[element] !== undefined) dict[element] += 1;
+        else { dict[element] = 1};
     });
     
-    for(let i = 0; i < arr.length; i++) {
-        dict[arr[i]] += 1;
-    };
-
+    const outputSort = [];
     for(let key in dict) {
-        outputSort.push([key, dict[key]])      
+        outputSort.push([Number(key), dict[key]]);  
     };
 
     outputSort.sort((a, b) => {
