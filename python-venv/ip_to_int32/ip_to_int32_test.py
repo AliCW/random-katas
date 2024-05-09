@@ -27,5 +27,6 @@ def test_6(): #(minimal valued IP address test))
 def test_7(): #(maximum valued IP address test)
     addressString = "255.255.255.255"
     assert ip_to_int32(addressString) == 4294967295
+    
 
 #https://www.codewars.com/kata/52ea928a1ef5cfec800003ee/train/python

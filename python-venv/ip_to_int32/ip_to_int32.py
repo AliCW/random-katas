@@ -1,9 +1,7 @@
 import math
 
 def ip_to_int32(addressString):
-
     addressArray = list(map(int, addressString.split('.')))
-
     addressArray[0] *= math.pow(256, 3)
     addressArray[1] *= math.pow(256, 2)
     addressArray[2] *= 256
