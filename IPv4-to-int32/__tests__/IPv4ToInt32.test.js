@@ -9,15 +9,15 @@ describe('Return the 32 bit integer number for the binary of the given IPv4 addr
         const addressString = "128.114.17.104";
         expect(ipToInt32(addressString)).toBe(2154959208);
     });
-    test('Given "240.55.15.68", return 4030140228', () => {
+    test('Given "240.55.15.68", return 4030140228 (simple IP address test)', () => {
         const addressString = "240.55.15.68";
         expect(ipToInt32(addressString)).toBe(4030140228);
     });
-    test('Given "40.164.200.192", return 681887936', () => {
+    test('Given "40.164.200.192", return 681887936 (simple IP address test)', () => {
         const addressString = "40.164.200.192";
         expect(ipToInt32(addressString)).toBe(681887936);
     });
-    test('Given "244.91.92.246", return 4099628278', () => {
+    test('Given "244.91.92.246", return 4099628278 (simple IP address test)', () => {
         const addressString = "244.91.92.246";
         expect(ipToInt32(addressString)).toBe(4099628278);
     });

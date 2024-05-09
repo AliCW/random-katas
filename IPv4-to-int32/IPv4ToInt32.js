@@ -1,10 +1,9 @@
 const ipToInt32 = (addressString) => {
 
-    let out = addressString.split('.').reduce((increment, current) => {
+    return addressString.split('.').reduce((increment, current) => {
         return (increment << 8) + parseInt(current, 10);
-    }, 0);
+    }, 0) >>> 0;
 
-    return out >>> 0;
 };
 
 module.exports = { ipToInt32 };
