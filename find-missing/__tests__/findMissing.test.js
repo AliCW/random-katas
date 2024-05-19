@@ -1,6 +1,13 @@
 const { findMissing } = require('../findMissing');
 
 describe(`Given two integer arrays where the second array is a shuffled duplicate of the first array with one element missing, find the missing element.`, () => {
+    test('Confirm the given arguments are not mutated', () => {
+        const arr1 = [1, 2, 2, 3];
+        const arr2 = [1, 2, 3];
+        findMissing(arr1, arr2);
+        expect(arr1).toEqual([1, 2, 2, 3]);
+        expect(arr2).toEqual([1, 2, 3]);
+    });
     test('Given [1, 2, 2, 3] & [1, 2, 3], return 2', () => {
         const arr1 = [1, 2, 2, 3];
         const arr2 = [1, 2, 3];
