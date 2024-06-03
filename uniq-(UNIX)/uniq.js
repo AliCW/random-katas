@@ -10,6 +10,7 @@ const uniq = (array) => {
 module.exports = { uniq };
 
 
+
 // return array.filter((element, index) => {
 //     if(element === null) return element;
 //     if(element !== array[index + 1]) return element;
