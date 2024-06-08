@@ -1,4 +1,4 @@
-from histogram_v1 import histogram
+from kata_function.histogram_v1 import histogram
 
 def test_1():
     array = [1, 2, 3, 4, 5, 6]
