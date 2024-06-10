@@ -18,7 +18,7 @@ describe('Given an array, return all matching pairs with a difference of 2', () 
         const array = [1, 3, 4, 6];
         expect(differenceOf2(array)).toEqual([[ 1, 3 ], [ 4, 6 ]]);
     });
-    test('Given [4, 1, 2, 3], return [[4, 2], [1, 3]]', () => {
+    test('Given [4, 1, 2, 3], return [[1, 3], [2, 4]]', () => {
         const array = [4, 1, 2, 3];
         expect(differenceOf2(array)).toEqual([[1, 3], [2, 4]]);
     });
