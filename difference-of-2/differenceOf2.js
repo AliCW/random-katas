@@ -5,24 +5,15 @@ const differenceOf2 = (array) => {
             if(array[i] - array[j] === 2){
                 if(array[i] > array[j]) {
                     differences.push([array[i], array[j]]);
-
-                }
+                };
             };
         };
     };
-
-
-
     differences = differences.map((element) => {
         return element.sort((a, b) => a - b);
     });
 
-    // out = Array.from(new Set(differences.map(JSON.stringify)), JSON.parse);
-    // out = out.sort((a, b) => a[0] - b[0]);
-    differences = differences.sort((a, b) => a[0] - b[0]);
-
-    console.log(differences)
-    return differences;
+    return differences.sort((a, b) => a[0] - b[0]);;
 };
 
 module.exports = { differenceOf2 };
