@@ -1,11 +1,13 @@
 const { GADERYPOLUKIcypher } = require('../GA-DE-RY-PO-LU-KI-cypher');
 
 describe(`Create encode & decode functions for the given cypher:
-    G => A
-    g => a
-    a => g
-    A => G
-    D => E`, () => {
+    G => A, g => a, a => g, A => G,
+    D => E, d => e, E => D, e => d,
+    R => Y, r => y, Y => R, y => r,
+    P => O, p => o, O => P, o => p,
+    L => U, l => u, U => L, u => l,
+    K => I, k => i, I => K, i => k
+    `, () => {
     test('Encode function: Given "Ala has a cat", return "Gug hgs g cgt"', () => {
         const cypher = new GADERYPOLUKIcypher();
         const string = "Ala has a cat";
