@@ -1,21 +1,17 @@
-const lengthOfSeq = (array, number) => { // a bit bloated
+const lengthOfSeq = (array, number) => { 
     if(array.length <= 1 || !array.includes(number)) return 0;    
     
     instances = 0;
-    array.forEach((element) => {
-        if(element === number) instances++;
+    seq = [];
+    array.forEach((element, index) => {
+        if(element === number) {
+            instances++;
+            seq.push(index);
+        };
     });
-    if(instances > 2) return 0;
-    
-    count = 1;
-    startCounting = false;
-    for(let i = 0; i < array.length; i++){
-        if(array[i] === number & startCounting === true) break;
-        if(array[i] === number) startCounting = true;
-        if(startCounting === true) count++;     
-    };
-    return count;
+    if(instances !== 2) return 0;
 
+    return seq[1] - seq[0] + 1;
 };
 
 module.exports = { lengthOfSeq };

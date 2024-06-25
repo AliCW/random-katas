@@ -27,6 +27,11 @@ describe('Given an array and number, find the length of the subarray starting an
         const number = 1;
         expect(lengthOfSeq(array, number)).toBe(0);
     });
+    test('Given [-7, 3, 8, -16, 2, 1] & 8, return 0 - given number appears only once', () => {
+        const array = [-7, 3, 8, -16, 2, 1];
+        const number = 8;
+        expect(lengthOfSeq(array, number)).toBe(0);
+    });
     test('Given [-7, 3, -7, -7, 2, 1] & -7, return 0 - given number appears more than twice', () => {
         const array = [-7, 3, -7, -7, 2, 1];
         const number = -7;
