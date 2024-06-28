@@ -55,4 +55,5 @@ describe('Given an array of age numbers, return the two highest ages', () => {
     });
 });
 
+
 //https://www.codewars.com/kata/511f11d355fe575d2c000001/train/javascript
