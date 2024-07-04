@@ -12,7 +12,6 @@ const englishBeggars = (values, beggars) => {
         count++;
         if(count === beggars) count = 0;
     };
-    console.log(output)
     
     return output;
 };
