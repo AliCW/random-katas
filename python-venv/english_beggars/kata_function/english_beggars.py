@@ -15,4 +15,5 @@ def english_beggars(values, beggars):
 
     return output
 
+
 # https://www.codewars.com/kata/59590976838112bfea0000fa/train/python

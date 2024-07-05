@@ -45,5 +45,6 @@ def test_9():
     values = [22, 339, 272, 928, 14, 3, 74, 8, 300, 854, 3, 126, 583, 4, 7]
     beggars = 4
     assert english_beggars(values, beggars) == [919, 1200, 356, 1062]
+    
 
 # https://www.codewars.com/kata/59590976838112bfea0000fa/train/python
