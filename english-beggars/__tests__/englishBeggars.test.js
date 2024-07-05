@@ -32,7 +32,7 @@ describe('Given an array of values and an amount of beggars, you are supposed to
         const beggars = 0;
         expect(englishBeggars(values, beggars)).toEqual([]);
     });
-    test('Given [497, 119, 5] & 19, return [1, 2, 3, 4, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]', () => {
+    test('Given [1, 2, 3, 4, 5] & 19, return [1, 2, 3, 4, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]', () => {
         const values = [1, 2, 3, 4, 5];
         const beggars = 19;
         expect(englishBeggars(values, beggars)).toEqual([1, 2, 3, 4, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
