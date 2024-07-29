@@ -5,7 +5,7 @@ const findMaxDivisors = (a, b) => {
         if(b % 2 === 0 === true) return b;
     };
 
-    let start = a
+    let start = a;
     let end = b;
     if(a % 2 === 0 === false) start += 1;
     if(b % 2 === 0 === false) end -= 1;
@@ -13,9 +13,13 @@ const findMaxDivisors = (a, b) => {
     let factors = 0;
     const divisors = {};
     for(let i = start; i < end; i++){
-        for(let j = 1; j <= end; j++){ 
-            if(i % j === 0) factors++;
-            if(j !== i / j) factors++;
+        for(let j = 1; j <= Math.sqrt(i); j++){ 
+            if(i % j === 0) {
+                factors++;
+                if(j !== i / j) {
+                    factors++;
+                };
+            };
         };
         Object.assign(divisors, {[i]: factors});
         factors = 0;
@@ -33,8 +37,8 @@ const findMaxDivisors = (a, b) => {
     return output.sort((a, b) => {
         return a - b;
     })[0];
-
 };
 
 module.exports = { findMaxDivisors };
 
+//https://www.codewars.com/kata/588c0a38b7cd14085300003f/train/javascript

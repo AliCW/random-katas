@@ -43,3 +43,4 @@ describe('Given two numbers, find the number with the maximum possible divisors 
     });
 });
 
+//https://www.codewars.com/kata/588c0a38b7cd14085300003f/train/javascript
