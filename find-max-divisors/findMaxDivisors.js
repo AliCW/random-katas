@@ -41,4 +41,5 @@ const findMaxDivisors = (a, b) => {
 
 module.exports = { findMaxDivisors };
 
+
 //https://www.codewars.com/kata/588c0a38b7cd14085300003f/train/javascript
