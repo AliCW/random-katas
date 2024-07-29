@@ -16,7 +16,30 @@ describe('Given two numbers, find the number with the maximum possible divisors 
         const b = 156;
         expect(findMaxDivisors(a, b)).toBe(120);
     });
+    test('Given 86 & 1521, return 1260', () => {
+        const a = 86;
+        const b = 1521;
+        expect(findMaxDivisors(a, b)).toBe(1260);
+    });
+    test('Given 46 & 4051, return 2520', () => {
+        const a = 46;
+        const b = 4051;
+        expect(findMaxDivisors(a, b)).toBe(2520);
+    });
+    test('Given 85 & 4717, return 2520', () => {
+        const a = 85;
+        const b = 4717;
+        expect(findMaxDivisors(a, b)).toBe(2520);
+    });
+    test('Given 83 & 6760, return 5040', () => {
+        const a = 83;
+        const b = 6760;
+        expect(findMaxDivisors(a, b)).toBe(5040);
+    });
+    test('Given 54 & 62, return 60', () => {
+        const a = 54;
+        const b = 62;
+        expect(findMaxDivisors(a, b)).toBe(60);
+    });
 });
 
-
-//(divNum(52,156),120); 

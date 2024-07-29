@@ -13,7 +13,7 @@ const findMaxDivisors = (a, b) => {
     let factors = 0;
     const divisors = {};
     for(let i = start; i < end; i++){
-        for(let j = 1; j <= Math.sqrt(i); j++){
+        for(let j = 1; j <= end; j++){ 
             if(i % j === 0) factors++;
             if(j !== i / j) factors++;
         };
@@ -29,7 +29,7 @@ const findMaxDivisors = (a, b) => {
         };
         start++;
     };
-    console.log(divisors, output)
+
     return output.sort((a, b) => {
         return a - b;
     })[0];
