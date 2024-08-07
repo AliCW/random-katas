@@ -1,24 +1,20 @@
-const duplicateCount = (text) => {
-    let dict = {};
-    let lowerString = text.toLowerCase();
-    let splitString = lowerString.split("");
-    let returnValue = 0;
-
-    splitString.forEach((element) => {
-        dict[element] = 0;
+const duplicateCount = (string) => {
+    const dict = {};
+    const split = string.toLowerCase().split('');
+    
+    split.forEach((element) => {
+        if(dict[element] === undefined) dict[element] = 1;
+        else dict[element]++;
     });
     
-    for (let i = 0; i < splitString.length; i++) {
-        dict[splitString[i]] += 1;
-    };
-    
-    for(let key in dict) {
+    let output = 0;
+    for(let key in dict){
         if(dict[key] > 1) {
-            returnValue += 1;
+            output++;
         };
     };
 
-    return returnValue;
+    return output;
 };
 
 module.exports = { duplicateCount };

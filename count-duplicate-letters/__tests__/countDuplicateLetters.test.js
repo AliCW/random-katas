@@ -1,21 +1,37 @@
 const { duplicateCount } = require('../countDuplicateLetters');
 
 describe('Count the duplicate letter in the given argument & return the number', () => {
-    test('Given a string with no duplicate letters, return 0', () => {
-        const text = 'abcdefg';
-        expect(duplicateCount(text)).toBe(0);
+    test('Given "", return 0 - empty string test', () => {
+        const string = '';
+        expect(duplicateCount(string)).toBe(0);
     });
-    test('Given a string with a single duplicate letter, return 1', () => {
-        const text = 'aabedfj';
-        expect(duplicateCount(text)).toBe(1);
+    test('Given "abcdefg", return 0 - string with no duplicate letters', () => {
+        const string = 'abcdefg';
+        expect(duplicateCount(string)).toBe(0);
     });
-    test('Given a string with two duplicate letters ignoring case, return 2', () => {
-        const text = 'aadDegjn047';
-        expect(duplicateCount(text)).toBe(2);
+    test('Given "aabedfj", return 1 - string with a single duplicate letter (at string start)', () => {
+        const string = 'aabedfj';
+        expect(duplicateCount(string)).toBe(1);
     });
-    test('Given a string with four duplicate characters', () => {
-        const text = 'bb00fghyylmoopqw';
-        expect(duplicateCount(text)).toBe(4);
+    test('Given "aadDegjn047", return 2 - string with two duplicate letters (at string start), ignoring case', () => {
+        const string = 'aadDegjn047';
+        expect(duplicateCount(string)).toBe(2);
+    });
+    test('Given "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", return 26 - string with many duplicates (throughout string), ignoring case', () => {
+        const string = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        expect(duplicateCount(string)).toBe(26);
+    });
+    test('Given "bb00fghyylmoopqw", return 4 - string with four duplicate characters (throughout string)', () => {
+        const string = 'bb00fghyylmoopqw';
+        expect(duplicateCount(string)).toBe(4);
+    });
+    test('Given "Indivisibilities", return 2 - string with two duplicates, duplicates are not adjacent', () => {
+        const string = 'Indivisibilities';
+        expect(duplicateCount(string)).toBe(2);
+    });
+    test('Given "abcdefghijklmnabcdefgABCDEFabcdeABCDABCaba", return 7 - string with many duplicates, duplicates are not adjacent', () => {
+        const string = 'abcdefghijklmnabcdefgABCDEFabcdeABCDABCaba';
+        expect(duplicateCount(string)).toBe(7);
     });
 });
 
