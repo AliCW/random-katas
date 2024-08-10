@@ -1,4 +1,5 @@
 const vectorAffinity = (xs, ys) => {
+    if(xs.length === 0 && ys.length === 0) return 1;
     let differences = 0;
     let length = 0;
     if(xs.length < ys.length){
