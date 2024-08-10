@@ -18,4 +18,5 @@ const vectorAffinity = (xs, ys) => {
 
 module.exports = { vectorAffinity };
 
+
 //https://www.codewars.com/kata/5498505a43e0fd83620010a9/train/javascript
