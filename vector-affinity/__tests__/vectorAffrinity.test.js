@@ -2,6 +2,13 @@ const { vectorAffinity } = require('../vectorAffrinity');
 
 describe(`Calculate the number of items in a vector that appear at the same index in each vector, with the same value.
     Affinity value should be realized on a scale of 0.0 to 1.0, with 1.0 being absolutely identical. Two identical sets should always be evaluated as having an affinity of 1.0.`, () => {
+    test('Confirm the given arrays are not mutated', () => {
+        const xs = [1, 2, 3, 4, 5];
+        const ys = [1, 4, 3, 4, 6];
+        vectorAffinity(xs, ys);
+        expect(xs).toEqual([1, 2, 3, 4, 5]);
+        expect(ys).toEqual([1, 4, 3, 4, 6]);
+    });
     test('Given [1, 2, 3, 4, 5] & [1, 2, 2, 4, 3], return 0.6', () => {
         const xs = [1, 2, 3, 4, 5];
         const ys = [1, 2, 2, 4, 3];
