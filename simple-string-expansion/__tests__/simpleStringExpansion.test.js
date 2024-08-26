@@ -50,3 +50,5 @@ describe('Expand the alphanumeric string as per the digits given, the return arg
         expect(stringExpansion(s)).toBe('OlbGssssssskkkkkkkvvvvvvvnnnnnnnhhhhMMMM');
     });
 });
+
+//https://www.codewars.com/kata/5ae326342f8cbc72220000d2/javascript
