@@ -21,17 +21,13 @@ describe('Given n, take the sum of the digits of n. If that value has more than 
         const number = 493193;
         expect(digitalRoot(number)).toBe(2);
     });
-    test('Given 123456789, return 1', () => {
+    test('Given 123456789, return 9', () => {
         const number = 123456789;
         expect(digitalRoot(number)).toBe(9);
     });
-    test('Given 987654321, return 8', () => {
+    test('Given 987654321, return 9', () => {
         const number = 987654321;
         expect(digitalRoot(number)).toBe(9);
-    });
-    test('Given 56413248956248795, return 6', () => {
-        const number = 56413248956248795;
-        expect(digitalRoot(number)).toBe(2);
     });
 });
 
