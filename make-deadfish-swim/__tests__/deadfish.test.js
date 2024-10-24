@@ -22,7 +22,7 @@ describe('Write a parser that will parse & run deadfish: i=+1 d=-1 s=sqaure o=ou
         expect(deadfish(string)).toEqual([]);
     });
     test('Given "disc", return []', () => {
-        const string = '';
+        const string = 'disc';
         expect(deadfish(string)).toEqual([]);
     });
     test('Given "infinitesimal o distance o destination", return [10, 100, 9803]', () => {
