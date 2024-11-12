@@ -1,6 +1,13 @@
 const { consecutive } = require("../consecutiveItems");
 
 describe("check the input array (arr) contains the given numbers (a, b) in consecutive order", () => {
+    test("Tests the input array is not mutated", () => {
+        const arr = [1, 3, 5, 7];
+        const a = 3;
+        const b = 7;
+        consecutive(arr, a, b);
+        expect(arr).toEqual([1, 3, 5, 7]);
+    });
     test("Given [1, 3, 5, 7], 3, 7 - return false", () => {
         const arr = [1, 3, 5, 7];
         const a = 3;

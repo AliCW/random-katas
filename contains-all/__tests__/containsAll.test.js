@@ -1,6 +1,13 @@
 const { containsAll } = require('../containsAll');
 
 describe('Check if the second argument (array) contains elements that are also all in the first argument (array)', () => {
+    test('Confirms the input arrays are not mutated', () => {
+        const arr1 = [1, 2, 3,  4,  5,  6, 7, 8, 9, 10, 11, 12, 13];
+        const arr2 = [1, 2, 3, 4, 5];
+        containsAll(arr1, arr2);
+        expect(arr1).toEqual([1, 2, 3,  4,  5,  6, 7, 8, 9, 10, 11, 12, 13]);
+        expect(arr2).toEqual([1, 2, 3, 4, 5]);
+    });
     test('Given [1, 2, 3,  4,  5,  6, 7, 8, 9, 10, 11, 12, 13] & [1, 2, 3, 4, 5], return true', () => {
         const arr1 = [1, 2, 3,  4,  5,  6, 7, 8, 9, 10, 11, 12, 13];
         const arr2 = [1, 2, 3, 4, 5];
