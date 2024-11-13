@@ -1,13 +1,9 @@
-function countLines(array) {
-    if (array.length === 0) return [];
-    let arrayCopy = [...array];
-    let output = [];
-    arrayCopy.forEach(function(element, index){
-        let append = index + 1 + ': ';
-        let outputString = append.concat(element);
-        output.push(outputString);
-    })
-    return output;
+const countLines = (array) => {
+
+    return array.map((element, index) => {
+        return `${index + 1}: ${element}`;
+    });
+
 };
 
 module.exports = { countLines };
