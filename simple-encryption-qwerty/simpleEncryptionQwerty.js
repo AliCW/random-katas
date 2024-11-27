@@ -15,7 +15,7 @@ const encrypt = (string,number) => {
      return string.split('').map((element) => {
         if(cypher1.includes(element.toLowerCase())){
             encryptIndex = cypher1.indexOf(element.toLowerCase()) + Number(num[0]);
-            if(encryptIndex > cypher1.length){
+            if(encryptIndex > cypher1.length - 1){
                 encryptIndex = encryptIndex - cypher1.length
             }
 
@@ -27,8 +27,8 @@ const encrypt = (string,number) => {
         }
         else if(cypher2.includes(element.toLowerCase())){
             encryptIndex = cypher2.indexOf(element.toLowerCase()) + Number(num[1]);
-
-            if(encryptIndex > cypher2.length){
+            console.log(element, encryptIndex);
+            if(encryptIndex > cypher2.length - 1){
                 encryptIndex = encryptIndex - cypher2.length
             }
 
@@ -43,7 +43,7 @@ const encrypt = (string,number) => {
         }
         else if(cypher3.includes(element.toLowerCase())){
             encryptIndex = cypher3.indexOf(element.toLowerCase()) + Number(num[2]);
-            if(encryptIndex > cypher3.length){
+            if(encryptIndex > cypher3.length - 1){
                 encryptIndex = encryptIndex - cypher3.length
             }
 
@@ -55,6 +55,7 @@ const encrypt = (string,number) => {
                 return cypher3[encryptIndex]
             }
         }
+        return element
     }).join('')
 
 };
