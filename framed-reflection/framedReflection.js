@@ -24,11 +24,7 @@ const mirror = (string) => {
             };
         };
 
-    let frame = ['*','*','*','*'];
-    for(let j = 0; j < longestIndex; j++){
-        frame.push('*');
-    };
-    frame = frame.join('');
+    const frame = '*'.repeat(longestIndex + 4);
     output.unshift(frame);
     output.push(frame);
 
