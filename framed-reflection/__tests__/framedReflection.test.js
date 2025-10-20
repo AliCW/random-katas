@@ -17,6 +17,3 @@ describe('Given a string, returns its mirror instances with "*" frames', () => {
 });
 
 //https://www.codewars.com/kata/581331293788bc1702001fa6/train/javascript
-
-//***********\n* tji     *\n* praegy  *\n* znhavks *\n* wmcbtr  *\n* dvsan   *\n***********
-//***********\n* tji *\n* praegy *\n* znhavks *\n* wmcbtr *\n* dvsan *\n***********
