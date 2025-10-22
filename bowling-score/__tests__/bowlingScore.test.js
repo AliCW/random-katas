@@ -18,4 +18,12 @@ describe('Given an array of pins knocked down, calcuclate the score (ten pin bow
         const array = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
         expect(bowlingScore(array)).toBe(300);
     });
+    test('Given [0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 10,1,0], return 11', () => {
+        const array = [0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 10,1,0];
+        expect(bowlingScore(array)).toBe(11);
+    });
+    test('Given [0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 10, 1,0], return 12', () => {
+        const array = [0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 10, 1,0];
+        expect(bowlingScore(array)).toBe(12);
+    });
 });
