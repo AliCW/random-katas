@@ -30,10 +30,10 @@ describe('Given an array of pins knocked down, calcuclate the score (ten pin bow
         const array = [10, 5, 5, 10, 5, 5, 10, 5, 5, 10, 5, 5, 10, 5, 5, 10];
         expect(bowlingScore(array)).toBe(200);
     });
-    // test('Given [10, 10,  2, 8, 10, 9, 1, 10, 10, 4,  6, 0, 10, 7, 3, 7], return 190', () => {
-    //     const array = [10, 10,  2, 8, 10, 9, 1, 10, 10, 4,  6, 0, 10, 7, 3, 7];
-    //     expect(bowlingScore(array)).toBe(190);
-    // });
+    test('Given [10, 10,  2, 8, 10, 9, 1, 10, 10, 4,  6, 0, 10, 7, 3, 7], return 190', () => {
+        const array = [10, 10,  2, 8, 10, 9, 1, 10, 10, 4,  6, 0, 10, 7, 3, 7];
+        expect(bowlingScore(array)).toBe(190);
+    });
 });
 
 
