@@ -1,122 +1,106 @@
 const door = (string) => {
     let out = ''
+    
     let position = 0
+    let pauses = 0
 
     let on = false
     let increase = false
     let obstruct = false
-    let pauses = 0
-    let reverse = false;
-
 
     for(let i = 0; i < string.length; i++){
 
-        if(string[i] === 'P') pauses++
-        console.log(on, position, increase, obstruct, string[i])
+        if(string[i] === 'P') pauses++;
+
         if(string[i] === 'O' && on){
             if(out[i - 2] > position){
-                increase = true
-                on = true
-                
-                obstruct = !obstruct
-                position++
-                out += position
-                continue
+                position++;
+                increase = true;
             } 
             else {
+                position--;
                 increase = false;
-                on = true
-                
-                obstruct = !obstruct
-                position--
-                out += position
-                continue
+            };
+            on = true;
+            obstruct = !obstruct;
+            out += position;
+            continue;
+        };
+        if(string[i] === 'P' && !on){ 
+            if(position === 0){
+                increase = true;
+                position++;
+                on = true;
+                out += position;
+                continue;
+            }
+            if(position === 5){
+                increase = false;
+                position--;
+                on = true;
+                out += position;
+                continue;
 
             }
-        }
-        if(string[i] === 'P' && !on && position === 0){ //< set increase
-            on = true
-            increase = true
-            position++
-            out += position
-            continue;
-        }
-        if(string[i] === 'P' && !on && position === 5) {
-            
+        };
+        if(string[i] === 'P' && !on && obstruct){
+            if(pauses % 2){
+                position--;
+                
+            } else {
+                position++;
+            };
             on = true;
-            increase = false
-            position--
-            out += position
-            continue
-            
-        }
-        if(string[i] === 'P' && !on && obstruct === true && pauses % 2){ //last test going in here for error
-            on = true
-            position--;
-            out += position
-            continue
-        }
-        if(string[i] === 'P' && !on && obstruct === true && pauses % 2 === 0){ //last test going in here for error
-            on = true
-            position++;
-            out += position
-            continue
-        }
-        if(string[i] === 'P' && !on && obstruct === false && pauses % 2){ //
-            on = true
-            position++;
-            out += position
-            continue
-        }
-        if(string[i] === 'P' && !on && obstruct === false && pauses % 2 === 0){ //
-            on = true
-            position--;
-            out += position
-            continue
-        }
-        if(string[i] === 'P' && on){ //<maintain
+            out += position;
+            continue;
+        };
+        if(string[i] === 'P' && !on && !obstruct){ 
+            if(pauses % 2){
+                position++;
+            } else {
+                position--;
+            }
+            on = true;
+            out += position;
+            continue;
+        };
+
+        if(string[i] === 'P' && on){
             on = false;
             out += position;
-            continue
-        }
+            continue;
+        };
         
 
         if(on && increase){
             if(position === 5){
-                out += position
                 on = false;
-                continue;
             }
             else {
-                position++
-                out += position
-                continue;
-
-            }
-        }
+                position++;
+            };
+            out += position;
+            continue;
+        };
         if(on && !increase){
             if(position === 0){
-                out += position
                 on = false;
-                continue;
             }
             else {
                 position--
-                out += position
-                continue
-            }
-        }
+            };
+            out += position;
+            continue;
+        };
 
         if(!on){
             out += position;
             continue;
-        }
+        };
  
-    }
+    };
 
-    return out
-
-
+    return out;
 };
 
 module.exports = { door };
