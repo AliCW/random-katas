@@ -21,15 +21,14 @@ class VendingMachine {
         let selectionIndex = 0;
         let validSelection = false;
         this.items.forEach((element, index) => {
-            for(let key in element){
-                if(element[key] === selection){
-                    selectionIndex = index;
-                    validSelection = true;
-                };
+            if(element['code'] === selection){
+                selectionIndex = index;
+                validSelection = true;
             };
         });
-        if(!validSelection){
-            let cash = this.money.toString();
+
+        const centify = (monies) => {
+            let cash = monies.toString();
             if(cash.search(/[.]/g) > 0){
                 if(cash.slice(cash.search(/[.]/g), cash.length).length > 3){
                     cash = Math.round(Number(cash) * 100) / 100;
@@ -41,17 +40,22 @@ class VendingMachine {
             }
             else {
                 cash += '.00';
-            };0
-            return `Invalid selection! : Money in vending machine = ${cash}`;
+            };
+            return cash;
+        };
+
+        if(!validSelection){
+            let formattedCash = centify(this.money);
+            return `Invalid selection! : Money in vending machine = ${formattedCash}`;
         };
 
         if(this.items[selectionIndex]['price'] > itemMoney){
             return "Not enough money!";
         };
+        
         if(this.items[selectionIndex]['quantity'] <= 0){
             return `${this.items[selectionIndex]['name']}: Out of stock!`;
         };
-
 
         if(this.items[selectionIndex]['price'] === itemMoney){
             this.money += itemMoney;
@@ -60,22 +64,10 @@ class VendingMachine {
         };
 
         if(this.items[selectionIndex]['price'] < itemMoney){
-            let change = itemMoney - this.items[selectionIndex]['price'];
-            let cash = change.toString();
-            if(cash.search(/[.]/g) > 0){
-                if(cash.slice(cash.search(/[.]/g), cash.length).length > 3){
-                    cash = Math.round(Number(cash) * 100) / 100;
-                    cash = cash.toString();
-                }
-                if(cash.slice(cash.search(/[.]/g), cash.length).length === 2){
-                    cash += '0';
-                }
-            } else {
-                cash +=  ".00";
-            };
             this.money += this.items[selectionIndex]['price'];
             this.items[selectionIndex]['quantity'] -= 1;
-            return `Vending ${this.items[selectionIndex]['name']} with ${cash} change.`;
+            let formattedCash = centify(itemMoney - this.items[selectionIndex]['price']);
+            return `Vending ${this.items[selectionIndex]['name']} with ${formattedCash} change.`;
         };
     };
 };
